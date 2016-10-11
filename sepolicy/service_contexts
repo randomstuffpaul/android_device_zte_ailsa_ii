@@ -1,0 +1,5 @@
+# Alipay
+alipayservice                             u:object_r:alipay_service:s0
+
+# Goodix fingerprint
+goodix.fp                                 u:object_r:gx_fpd_service:s0

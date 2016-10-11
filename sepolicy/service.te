@@ -1,0 +1,2 @@
+type alipay_service, service_manager_type;
+type gx_fpd_service, service_manager_type;

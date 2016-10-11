@@ -1,0 +1,20 @@
+type alipayServiced, domain;
+type alipayServiced_exec, exec_type, file_type;
+
+#Allow for transition from init domain to alipayServiced
+init_daemon_domain(alipayServiced)
+
+#Allow alipayServiced to use Binder IPC
+binder_use(alipayServiced)
+
+#Allow servicemanager to interact with ifaadaemon
+binder_call(alipayServiced, servicemanager)
+
+#Mark alipayServiced as a Binder service domain
+binder_service(alipayServiced)
+
+#Allow alipayServiced to be registered with service manager
+allow alipayServiced alipay_service:service_manager add;
+
+#Allow alipayServiced access to firmware
+r_dir_file(alipayServiced, firmware_file)
